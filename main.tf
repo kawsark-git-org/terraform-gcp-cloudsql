@@ -5,8 +5,8 @@ provider "google" {
 }
 
 resource "google_sql_database_instance" "cloudsql-postgres-master" {
-  name = "master-instance"
-  database_version = "POSTGRES_9_6"
+  name = "${var.database_name}"
+  database_version = "${var.database_version}"
   region = "${var.region}"
 
   settings {
