@@ -1,6 +1,6 @@
 provider "google" {
-  #Google provider credentials via environment variable: GOOGLE_CLOUD_KEYFILE_JSON
-  project = "${var.gcp_project_name}"
+  # Google provider credentials via environment variable: GOOGLE_CLOUD_KEYFILE_JSON
+  # Google project name configured via environment variable: GOOGLE_PROJECT
   region  = "${var.region}"
 }
 
@@ -29,4 +29,3 @@ resource "google_sql_user" "users" {
   instance = "${google_sql_database_instance.cloudsql-postgres-master.name}"
   password = "${var.gcp_sql_root_user_pw}"
 }
-
