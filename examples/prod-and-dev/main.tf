@@ -7,7 +7,7 @@ variable "gcp_sql_root_user_pw" {}
 variable "authorized_network" {}
 
 module "prod-gcp-cloudsql" {
-  source = "../../"
+  source = "github.com/kawsark-git-org/terraform-gcp-cloudsql"
   region  = "${var.region}"
   database_name = "prod-gcp-cloudsql"
   gcp_sql_root_user_pw = "${var.gcp_sql_root_user_pw}"
@@ -15,7 +15,7 @@ module "prod-gcp-cloudsql" {
 }
 
 module "dev-gcp-cloudsql" {
-  source = "../../"
+  source = "github.com/kawsark-git-org/terraform-gcp-cloudsql"
   region  = "${var.region}"
   database_name = "dev-gcp-cloudsql"
   gcp_sql_root_user_pw = "${var.gcp_sql_root_user_pw}"
