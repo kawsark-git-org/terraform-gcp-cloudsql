@@ -1,3 +1,7 @@
+variable "gcp_credentials" {
+  description = "GCP credentials needed by google provider"
+}
+
 variable "region" {
   default = "us-central1"
 }

@@ -1,5 +1,5 @@
 provider "google" {
-  # Google provider credentials via environment variable: GOOGLE_CLOUD_KEYFILE_JSON
+  credentials = "${var.gcp_credentials}"
   # Google project name configured via environment variable: GOOGLE_PROJECT
   region  = "${var.region}"
 }
