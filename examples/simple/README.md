@@ -4,10 +4,10 @@ This Terraform Configuration provisions a Google Cloud SQL PostgreSQL instance o
 
 **Download and configure provider:**
 - Clone this repository via `git` or HTTP and change to working directory: `cd terraform-gcp-cloudsql/examples/simple`.
-- Set the following environment variables appropriately to setup the [Terraform Google Provider](https://www.terraform.io/docs/providers/google/index.html).
+- Set the following Terraform configuration variables appropriately to setup the [Terraform Google Provider](https://www.terraform.io/docs/providers/google/index.html).
 ```
-export GOOGLE_CLOUD_KEYFILE_JSON=<path-to-service-account-keyfile>
-export GOOGLE_PROJECT=<name-of-project>
+export TF_VAR_gcp_credentials=$(cat <path-to-gcp-service-account-json>)
+export TF_VAR_gcp_project="<gcp-project-name>"
 ```
 
 **Set Configuration variables:**

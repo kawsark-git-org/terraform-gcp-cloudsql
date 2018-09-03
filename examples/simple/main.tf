@@ -1,10 +1,9 @@
 variable "gcp_credentials" {
-  description = "GCP credentials needed by google provider"
+  description = "GCP credentials needed by Google Terraform provider"
 }
 
-variable "database_name" {
-  description = "Name of the Cloud SQL instance"
-  default = "example-gcp-cloudsql"
+variable "gcp_project" {
+  description = "GCP project name needed by Google Terraform provider"
 }
 
 variable "region" {
@@ -17,9 +16,10 @@ variable "authorized_network" {}
 
 module "example-gcp-cloudsql" {
   gcp_credentials = "${var.gcp_credentials}"
+  gcp_project = "${var.gcp_project}"
   source = "github.com/kawsark-git-org/terraform-gcp-cloudsql"
   region  = "${var.region}"
-  database_name = "${var.database_name}"
+  database_name_prefix = "simple-cloudsql"
   gcp_sql_root_user_pw = "${var.gcp_sql_root_user_pw}"
   authorized_network = "${var.authorized_network}"
 }
