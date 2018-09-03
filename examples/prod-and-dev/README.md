@@ -59,8 +59,7 @@ SELECT * from cities;
 - To destroy the Cloud SQL instance, issue: `terraform destroy`.
 - Unset environment variables:
 ```
-unset GOOGLE_CLOUD_KEYFILE_JSON
-unset GOOGLE_PROJECT
 unset TF_VAR_gcp_sql_root_user_pw
-unset GOOGLE_PROJECT
+unset TF_VAR_gcp_credentials
+unset TF_VAR_gcp_project
 ```
